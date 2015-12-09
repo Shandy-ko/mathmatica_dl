@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1784,         68]
-NotebookOptionsPosition[      1449,         51]
-NotebookOutlinePosition[      1816,         67]
-CellTagsIndexPosition[      1773,         64]
+NotebookDataLength[      3169,        114]
+NotebookOptionsPosition[      2542,         89]
+NotebookOutlinePosition[      2909,        105]
+CellTagsIndexPosition[      2866,        102]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -46,8 +46,46 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"x", ",", 
      RowBox[{"-", "2.`"}], ",", "2.`"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.65848572509369*^9}]
-}, Open  ]]
+ CellChangeTimes->{3.658660540826195*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.658660532201707*^9, 3.658660538277028*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"fout", "[", " ", 
+    RowBox[{"vx_List", ",", " ", "vw_List", ",", " ", "h_"}], "]"}], ":=", 
+   RowBox[{"fsgn", "[", 
+    RowBox[{
+     RowBox[{"vw", ".", "vx"}], " ", "-", " ", "h"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"fout", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.2", ",", 
+     RowBox[{"-", "0.1"}]}], "}"}], ",", "0.2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.658660386794406*^9, 3.658660493895852*^9}, 
+   3.658660567972746*^9}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.6586605783241053`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6586605760434647`*^9, 3.6586605760530043`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.658660550855362*^9, 3.6586605654660788`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.658660560489833*^9, 3.6586605604958553`*^9}}]
 },
 WindowSize->{808, 651},
 WindowMargins->{{Automatic, 17}, {15, Automatic}},
@@ -67,9 +105,17 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 518, 14, 72, "Input"],
-Cell[1101, 38, 332, 10, 39, "Output"]
-}, Open  ]]
+Cell[580, 22, 518, 14, 61, "Input"],
+Cell[1101, 38, 333, 10, 28, "Output"]
+}, Open  ]],
+Cell[1449, 51, 92, 1, 28, InheritFromParent],
+Cell[CellGroupData[{
+Cell[1566, 56, 592, 18, 46, "Input"],
+Cell[2161, 76, 72, 1, 62, "Output"]
+}, Open  ]],
+Cell[2248, 80, 96, 1, 28, InheritFromParent],
+Cell[2347, 83, 94, 1, 28, InheritFromParent],
+Cell[2444, 86, 94, 1, 28, InheritFromParent]
 }
 ]
 *)
