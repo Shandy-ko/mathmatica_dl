@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     44372,       1141]
-NotebookOptionsPosition[     42753,       1082]
-NotebookOutlinePosition[     43119,       1098]
-CellTagsIndexPosition[     43076,       1095]
+NotebookDataLength[     46378,       1201]
+NotebookOptionsPosition[     44716,       1141]
+NotebookOutlinePosition[     45082,       1157]
+CellTagsIndexPosition[     45039,       1154]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1078,7 +1078,66 @@ Cell[BoxData[
      Scaled[0.05]}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{3.660024227384715*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"gInpList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gKyousiList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gn0", "=", 
+    RowBox[{
+     RowBox[{"Length", "[", "gInpList", "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "gn0\:306f\:5165\:529b\:306e1\:30641\:3064\:304c\:6301\:3064\:6210\:5206\
+\:306e\:500b\:6570\:306a\:306e\:3067", "\:ff0c", 
+    "gInpList\:306e\:6700\:521d\:306e\:5165\:529b\:306e\:6210\:5206\:500b\
+\:6570\:3067\:6c7a\:307e\:308b"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gn2", "=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"gKyousiList", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "gn2\:306f\:51fa\:529b\:306e\:6210\:5206\:306e\:500b\:6570", "=", 
+    "\:6559\:5e2b\:4fe1\:53f7\:306e\:6210\:5206\:306e\:500b\:6570"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gn1", "=", "3"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:96a0\:308c\:5c64\:306e\:500b\:6570\:306f\:5236\:9650\:304c\:306a\:304f",
+     "\:ff0c", 
+    "\:81ea\:5206\:3067\:9078\:3076\:81ea\:7531\:5ea6\:304c\:3042\:308b", 
+    "\:ff0e", "\:3053\:3053\:3067\:306f3\:500b\:306b\:9078\:3076"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.660130449951633*^9, 3.660130768228183*^9}}]
 },
 WindowSize->{837, 743},
 WindowMargins->{{Automatic, 14}, {Automatic, 0}},
@@ -1141,8 +1200,9 @@ Cell[39405, 991, 358, 7, 28, "Output"]
 Cell[39778, 1001, 1596, 40, 166, "Input"],
 Cell[CellGroupData[{
 Cell[41399, 1045, 136, 2, 42, "Input"],
-Cell[41538, 1049, 1199, 30, 274, "Output"]
-}, Open  ]]
+Cell[41538, 1049, 1199, 30, 240, "Output"]
+}, Open  ]],
+Cell[42752, 1082, 1960, 57, 164, "Input"]
 }
 ]
 *)
