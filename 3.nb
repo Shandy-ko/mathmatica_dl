@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    809877,      14549]
-NotebookOptionsPosition[    806493,      14436]
-NotebookOutlinePosition[    806859,      14452]
-CellTagsIndexPosition[    806816,      14449]
+NotebookDataLength[    811959,      14610]
+NotebookOptionsPosition[    808530,      14496]
+NotebookOutlinePosition[    808896,      14512]
+CellTagsIndexPosition[    808853,      14509]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -14432,7 +14432,67 @@ Cell[BoxData[
     5.944168783876881}}]],
   Editable->False]], "Print",
  CellChangeTimes->{3.660818158456991*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"t0", "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "1", ",", "1", ",", "\[IndentingNewLine]", "0", ",", "1", 
+        ",", "0", ",", "\[IndentingNewLine]", "0", ",", "1", ",", "0"}], 
+       "}"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"t1", "=", 
+       RowBox[{"{", 
+        RowBox[{
+        "0", ",", "0", ",", "1", ",", " ", "1", ",", "1", ",", "1", ",", " ", 
+         "0", ",", "0", ",", "1"}], "}"}]}], ";", 
+      RowBox[{"t2", "=", "0"}]}], ",", "1", ",", "0", ",", " ", "0", ",", "1",
+      ",", "0", ",", " ", "1", ",", "1", ",", "1"}]}], "}"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"t3", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "1", ",", "0", ",", "0", ",", " ", "1", ",", "1", ",", "1", ",", " ", 
+      "1", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:3069\:308c\:30823x3\:306b\:4e26\:3079\:306a\:304a\:3059\:3068T\:306e\
+\:56de\:8ee2\:30d1\:30bf", "\:30fc", "\:30f3\:306b\:306a\:308b"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c0", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1",
+      ",", "1"}], "}"}]}], ";", 
+  RowBox[{"c1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0",
+      ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1",
+      ",", "1"}], "}"}]}], ";", 
+  RowBox[{"c3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1", ",", "1",
+      ",", "1"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.660904432789442*^9, 3.6609045015855*^9}, {
+  3.6609045614202642`*^9, 3.66090469048085*^9}, {3.660904765321755*^9, 
+  3.6609049529268303`*^9}},
+ EmphasizeSyntaxErrors->True]
 },
 WindowSize->{725, 743},
 WindowMargins->{{Automatic, -2}, {Automatic, 0}},
@@ -14543,14 +14603,15 @@ Cell[226330, 4755, 538, 14, 56, "Output"],
 Cell[226871, 4771, 56681, 975, 259, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[283589, 5751, 2785, 81, 258, "Input"],
+Cell[283589, 5751, 2785, 81, 307, "Input"],
 Cell[286377, 5834, 308, 7, 28, "Output"],
 Cell[286688, 5843, 517681, 8530, 231, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[804406, 14378, 229, 5, 76, "Input"],
+Cell[804406, 14378, 229, 5, 42, "Input"],
 Cell[804638, 14385, 1839, 48, 38, "Print"]
-}, Open  ]]
+}, Open  ]],
+Cell[806492, 14436, 2034, 58, 184, "Input"]
 }
 ]
 *)
