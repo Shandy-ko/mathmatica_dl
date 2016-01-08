@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    953829,      17092]
-NotebookOptionsPosition[    950031,      16966]
-NotebookOutlinePosition[    950397,      16982]
-CellTagsIndexPosition[    950354,      16979]
+NotebookDataLength[    962342,      17312]
+NotebookOptionsPosition[    958364,      17182]
+NotebookOutlinePosition[    958730,      17198]
+CellTagsIndexPosition[    958687,      17195]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -16962,7 +16962,223 @@ BrNqHgz0x/aef4OsngfumhO/Y5g18rDl1q99D66SNfNQcTOk4fAVslYeoHxn
     Ticks->{Automatic, Automatic}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.661074453944017*^9, {3.661074527394064*^9, 3.661074553836997*^9}}]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"fsigmoid", "[", "x_", "]"}], ":=", 
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", "x"}], "]"}], "+", "1"}], ")"}]}]}], ";"}], 
+  RowBox[{
+  "(*", "\:30b7\:30b0\:30e2\:30a4\:30c9\:95a2\:6570", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fout", "[", 
+    RowBox[{"mW_List", ",", "vx_List"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"vu", ",", "vy"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"vu", "=", 
+       RowBox[{"mW", ".", "vx"}]}], ";", 
+      RowBox[{
+      "(*", "\:30ea\:30f3\:30af\:306e\:91cd\:307fmW\:3068\:524d\:5c64\:306e\
+\:51fa\:529b\:306e\:884c\:5217\:7a4d\:3067\:5404unit\:306b\:5165\:308b\:6d3b\
+\:6027\:30d9\:30af\:30c8\:30eb\:3092\:8a08\:7b97", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"vy", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"fsigmoid", ",", "vu"}], "]"}]}], ";", 
+      RowBox[{
+      "(*", "vu\:306e\:5404\:6210\:5206\:3092sigmoid\:95a2\:6570\:306b\:5165\
+\:308c\:3066\:51fa\:529b\:8a08\:7b97", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "vy", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.661244675247795*^9, 3.661244675843162*^9}, {
+  3.661244824441815*^9, 3.6612449025801973`*^9}, {3.6612451176002407`*^9, 
+  3.661245256457885*^9}, {3.661245304738368*^9, 3.6612453904072523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"fforwardBias", "[", "vx_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"gvxa1", "=", 
+       RowBox[{"Append", "[", 
+        RowBox[{"vx", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"gvy1", "=", 
+       RowBox[{"fout", "[", 
+        RowBox[{"gW1", ",", "gvxa1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"gvy1a1", "=", 
+       RowBox[{"Append", "[", 
+        RowBox[{"gvy1", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"gvy2", "=", 
+       RowBox[{"gW2", ".", "gvy1a1"}]}], ";", 
+      RowBox[{"(*", "\:56de\:5e30\:306e\:305f\:3081\:5909\:66f4", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "gvy2", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661245396001493*^9, 3.661245434200173*^9}, {
+  3.661245497200541*^9, 3.661245553391437*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"fbackwardBias", "[", 
+    RowBox[{
+    "vx_List", ",", "vy1_List", ",", "vy2_List", ",", "vt_List", ",", 
+     "eta_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"vs", ",", "vs2", ",", "vs1", ",", "mp2", ",", "mp1"}], "}"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"vs2", "=", 
+       RowBox[{"vy2", "-", "vt"}]}], ";", 
+      RowBox[{"(*", "\:56de\:5e30\:306e\:305f\:3081\:5909\:66f4", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"vs1", "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"vs2", ".", "gW2"}], ")"}], "*", "gvy1a1", "*", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "gvy1a1"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"vs1d1", "=", 
+       RowBox[{"Drop", "[", 
+        RowBox[{"vs1", ",", 
+         RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"gW2", "=", 
+       RowBox[{"gW2", "-", 
+        RowBox[{"eta", "*", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Times", ",", "vs2", ",", "gvy1a1"}], "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"gW1", "=", 
+       RowBox[{"gW1", "-", 
+        RowBox[{"eta", "*", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Times", ",", "vs1d1", ",", "gvxa1"}], "]"}]}]}]}], ";"}]}],
+     "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6612456272139893`*^9, 3.661245723814834*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"flearnrepeatBias", "[", 
+    RowBox[{"eta_", ",", "kurikaesiSuu_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "ii", ",", "k", ",", "vx", ",", "vy", ",", "vs2", ",", "vs1", ",", "vt",
+        ",", "errtbl"}], "}"}], ",", 
+     RowBox[{
+     "(*", "\:4f5c\:696d\:7528\:5909\:6570\:306e\:30ea\:30b9\:30c8", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"errtbl", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", 
+           RowBox[{"Length", "[", "gKyousiList", "]"}]}], "}"}]}], "]"}]}], 
+      ";", 
+      RowBox[{
+      "(*", "\:6b63\:7b54\:3054\:3068\:306e\:8aa4\:5dee\:3092\:5165\:308c\
+\:308b\:30ea\:30b9\:30c8\:3092\:7528\:610f", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"ii", "=", "1"}], ",", 
+        RowBox[{"ii", "\[LessEqual]", "kurikaesiSuu"}], ",", 
+        RowBox[{"ii", "++"}], ",", 
+        RowBox[{"(*", 
+         RowBox[{
+         "\:8abf\:6574\:3092\:7e70\:308a\:8fd4\:3059", "\:ff0e", 
+          "\:5b66\:7fd2\:306e\:4e3b\:8981\:90e8\:5206"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"k", "=", 
+          RowBox[{"RandomInteger", "[", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"Length", "[", "gKyousiList", "]"}]}], "}"}], "]"}]}], 
+         ";", 
+         RowBox[{"(*", 
+          RowBox[{
+          "\:5165\:529b", "\:30fc", 
+           "\:6b63\:7b54\:30da\:30a2\:306e\:756a\:53f7k\:3092\:30e9\:30f3\
+\:30c0\:30e0\:306b\:53d6\:308b"}], "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"vx", "=", 
+          RowBox[{"gInpList", "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}], ";", 
+         RowBox[{"vt", "=", 
+          RowBox[{"gKyousiList", "[", 
+           RowBox[{"[", "k", "]"}], "]"}]}], ";", 
+         RowBox[{"(*", 
+          RowBox[{
+          "k\:756a\:76ee\:306e\:5165\:529b\:3068\:6559\:5e2b\:4fe1\:53f7\:3092\
+\:53d6\:308a\:51fa\:3059", "\:ff0e"}], "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"vy", "=", 
+          RowBox[{"fforwardBias", "[", "vx", "]"}]}], ";", 
+         RowBox[{"(*", "bias\:306e\:305f\:3081\:5909\:66f4", "*)"}], 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"errtbl", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "=", 
+          RowBox[{"Append", "[", 
+           RowBox[{
+            RowBox[{"errtbl", "[", 
+             RowBox[{"[", "k", "]"}], "]"}], ",", 
+            RowBox[{"sqrt", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"vy", "-", "vt"}], ")"}], ".", 
+              RowBox[{"(", 
+               RowBox[{"vy", "-", "vt"}], ")"}]}], "]"}]}], "]"}]}], ";", 
+         RowBox[{
+         "(*", "\:51fa\:529b\:3068\:6b63\:7b54\:9593\:306e\:8aa4\:5dee\:3092\
+\:5165\:308c\:308b", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"fbackwardBias", "[", 
+          RowBox[{"vx", ",", "gvy1", ",", "vy", ",", "vt", ",", "eta"}], 
+          "]"}], ";"}]}], 
+       RowBox[{"(*", "bias\:306e\:305f\:3081\:5909\:66f4", "*)"}], 
+       "\[IndentingNewLine]", "]"}], ";", 
+      RowBox[{
+      "(*", "\:4ee5\:4e0a\:3092kurikaesiSuu\:3060\:3051\:7e70\:308a\:8fd4\
+\:3059", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"gerrtbl", "=", "errtbl"}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+       "\:8aa4\:5dee\:306e\:30ea\:30b9\:30c8\:3092\:30b0\:30ed", "\:30fc", 
+        "\:30d0\:30eb\:5909\:6570gerrtbl\:306b\:6b8b\:3057\:3066\:304a\:304f"}\
+], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"vylist", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"fforwardBias", "[", "vx", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"vx", ",", "gInpList"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{
+      "(*", "\:5b66\:7fd2\:5f8c\:306e\:91cd\:307f\:3067\:8a08\:7b97", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "vylist", "]"}], ";"}]}], 
+    RowBox[{
+    "(*", "\:305d\:306e\:7d50\:679c\:3092\:8fd4\:308a\:5024\:3068\:3059\:308b\
+", "*)"}], "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661246026066733*^9, 3.661246043401017*^9}}]
 },
 WindowSize->{644, 743},
 WindowMargins->{{Automatic, -2}, {Automatic, 0}},
@@ -17092,8 +17308,12 @@ Cell[812023, 14600, 519, 11, 46, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[812579, 14616, 451, 11, 42, "Input"],
-Cell[813033, 14629, 136982, 2334, 575, "Output"]
-}, Open  ]]
+Cell[813033, 14629, 136982, 2334, 541, "Output"]
+}, Open  ]],
+Cell[950030, 16966, 1517, 39, 207, "Input"],
+Cell[951550, 17007, 998, 24, 202, "Input"],
+Cell[952551, 17033, 1474, 40, 234, "Input"],
+Cell[954028, 17075, 4332, 105, 523, "Input"]
 }
 ]
 *)
